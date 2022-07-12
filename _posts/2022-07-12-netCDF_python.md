@@ -6,25 +6,22 @@ categories: media
 ---
 ![image](https://user-images.githubusercontent.com/109160548/178548932-1665e40a-1561-4f3a-a49a-413f7fcb6d77.png)
 
-`NetCDF` is a widely used data storage format, capable of storing high-dimensional, array-oriented data. Due to its simpler and robust structure, it is a common storage format for the spatio-temporal nature of climatic data. Anything, that is changing in both space and time  
+`NetCDF` is a widely used data storage format, capable of storing high-dimensional, array-oriented data. Due to the spatio-temporal nature of climatic data including precipitation/ temperature / soil moisture etc. derived from satellite observations, reanalyis, ouptputs from climate models - basically everything that varies in both space (gridded) and time (time-series), are often stored in `.nc` file format. 
+![structure](https://user-images.githubusercontent.com/109160548/178547196-de404e22-36d9-4397-b2e3-7493b7e93378.png) *Fig 1: Structure of a netcdf file*
+This blog helps to get started with [xarray](https://docs.xarray.dev/en/stable/) - a powerful tool for reading, writing and manipulating N-dimensional data files and is particularly emphasized on handling `netcdf` files. 
 
-![structure](https://user-images.githubusercontent.com/109160548/178547196-de404e22-36d9-4397-b2e3-7493b7e93378.png)
-**Fig: Structure of a netcdf file**
 
-## Code
-
-Embed code by putting `{{ "{% highlight language " }}%}` `{{ "{% endhighlight " }}%}` blocks around it. Adding the parameter `linenos` will show source lines besides the code.
-
+## LETS CODE! 
 
 {% highlight python %}
 # Load Libraries
-
-import numpy as np
+import numpy as np #numerical 
 from matplotlib import pyplot as plt
 import xarray as xr
 import pandas as pd
 import os
 {% endhighlight %}
+
 
 
 
