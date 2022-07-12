@@ -6,9 +6,7 @@ categories: media
 ---
 ![image](https://user-images.githubusercontent.com/109160548/178548932-1665e40a-1561-4f3a-a49a-413f7fcb6d77.png)
 
-# What is netCDF?
-netCDF is a widely used data storage system.
-![structure](https://user-images.githubusercontent.com/109160548/178547196-de404e22-36d9-4397-b2e3-7493b7e93378.png)
+
 
 
 ## Code
