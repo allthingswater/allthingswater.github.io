@@ -6,8 +6,10 @@ categories: media
 ---
 ![image](https://user-images.githubusercontent.com/109160548/178548932-1665e40a-1561-4f3a-a49a-413f7fcb6d77.png)
 
+`NetCDF` is a widely used data storage format, capable of storing high-dimensional, array-oriented data. Due to its simpler and robust structure, it is a common storage format for the spatio-temporal nature of climatic data. Some of the example data includes satellite/gridded precipitation datasets, outputs from climatic models - basically everything that is changing in both space (gridded) and time (time-series). 
 
-
+![structure](https://user-images.githubusercontent.com/109160548/178547196-de404e22-36d9-4397-b2e3-7493b7e93378.png)
+**Fig: Structure of a netcdf file**
 
 ## Code
 
