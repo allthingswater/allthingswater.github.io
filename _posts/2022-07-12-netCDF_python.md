@@ -112,3 +112,5 @@ stn_val.plot()
 I hope this post helps to get you started with the powerful `xarray` package for handling and manipulating `netCDF` files. The `xarray` package provides more advanced and powerful functionalities with user-friendly and extensive documentation, so do check them out at https://docs.xarray.dev/en/stable/index.html.
 
 Until next time!
+
+-Nischal Karki
