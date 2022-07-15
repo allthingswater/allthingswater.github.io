@@ -29,11 +29,16 @@ Next, we load the data using the `xr.open_dataset()` function. Here, we are usin
 
 {% highlight python %}
 # Load and have a look at the data
-ds = xr.open_dataset(r"E:\precip_1981.nc")
+ds = xr.open_dataset(".\data\APHRO_MA_025deg_V1901.2000.nc")
 ds
 {% endhighlight %}
-![ds_output](https://user-images.githubusercontent.com/109160548/178642934-d8dc260c-3a30-4e9b-a4fe-b922ab0f0afa.png)
+![ds](https://user-images.githubusercontent.com/109160548/179153669-9fc07fb7-9317-4cfe-85b7-8fe80387bea5.png)
 
-We have loaded the `netcdf` file as an `xarray` dataset. The summary shows 
+We have loaded the `netcdf` file as an `xarray` dataset. The dataset summary can be viewed by simply runnning `ds`. It shows that our file has 3 dimensions: longitude (lon), latitude (lat) and time. The `Coordinates` section provide values of the dimensions. The `Data variables` shows 2 variables, but we are interested in the `precip` variable which stores the values for precipitation amount. The variables can be returned as an array by simply using `ds.variable_name` or `ds["variable_name"]`.
+
+{% highlight python %}
+ds["time"]
+{% endhighlight %}
+![image](https://user-images.githubusercontent.com/109160548/179155686-597f9f37-8559-491e-8a0b-b01dba73d0c1.png)
 
 
