@@ -62,7 +62,7 @@ plt.colorbar(pr_plot)
 Since our file stores spatial data for each time step (every day of year 2000), we first select a single day. In the code above, `ds.precip[180]` selects the 179th day of the year (remember that python indexing starts with a 0). The argument `origin="lower"` is used for matrix plotting that usually starts at lower corner. 
 
 # Combining files with same spatial extent but different time periods
-The file we are using have only data for a single year. Most of the times, we will have multiple files for different time periods (say for each year) but for the same spatial extent. Processing each file repeatedly consumes time and is inefficient. `xarray` provides a function for mergin such multiple files together into a continuous spatio-temporal series. 
+The file we are using have data for a single year only. Most of the time, we may have multiple files for different time periods (say for each year) but havin the same spatial extent. Processing each file repeatedly consumes time and is inefficient. `xarray` provides a function for merging such multiple files together into a continuous spatio-temporal series. 
 
 {% highlight python %}
 files=[os.path.join("full_path_to_folder",f) for f in os.listdir(".\data")]
