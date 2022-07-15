@@ -25,10 +25,10 @@ import pandas as pd
 import os
 {% endhighlight %}
 
+# Load and have a look at the data
 Next, we load the data using the `xr.open_dataset()` function. Here, we are using precipitation data from `APHRODITE`. You can change the directory to your own `.nc` file.
 
 {% highlight python %}
-# Load and have a look at the data
 ds = xr.open_dataset(".\data\APHRO_MA_025deg_V1901.2000.nc")
 ds
 {% endhighlight %}
@@ -39,6 +39,19 @@ We have loaded the `netcdf` file as an `xarray` dataset. The dataset summary can
 {% highlight python %}
 ds["time"]
 {% endhighlight %}
+
 ![image](https://user-images.githubusercontent.com/109160548/179155686-597f9f37-8559-491e-8a0b-b01dba73d0c1.png)
 
+{% highlight python %}
+ds.precip
+{% endhighlight %}
+
+![image](https://user-images.githubusercontent.com/109160548/179157440-a61f6841-75f5-4b6b-bd2f-54bdbbf79395.png)
+
+# Quick plotting
+We can quickly plot the data for a single day. 
+{% highlight python %}
+pr_plot = plt.imshow(ds.precip[180],origin="lower")
+plt.colorbar(pr_plot)
+{% endhighlight %}
 
