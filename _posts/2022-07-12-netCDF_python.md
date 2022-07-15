@@ -107,4 +107,8 @@ df.to_csv('.\data\stn_precip.csv')
 stn_val.plot()
 {% endhighlight %}
 
-![image](https://user-images.githubusercontent.com/109160548/179167565-6e4cd898-09ab-49ed-b2ec-bd53710e6620.png)
+![image](https://user-images.githubusercontent.com/109160548/179167731-a9e15e32-9767-491b-86cf-570e5507b901.png)
+
+I hope this post helps to get you started with the powerful `xarray` package for handling and manipulating `netCDF` files. The `xarray` package provides more advanced and powerful functionalities with user-friendly and extensive documentation, so do check them out at https://docs.xarray.dev/en/stable/index.html.
+
+Until next time!
