@@ -57,7 +57,7 @@ pr_plot = plt.imshow(ds.precip[180],origin="lower")
 plt.colorbar(pr_plot)
 {% endhighlight %}
 
-![quick_plot](https://user-images.githubusercontent.com/109160548/179159450-5c09fc7b-d0f1-428a-ad6a-76d97717004a.png)
+![quick_plot](https://user-images.githubusercontent.com/109160548/179161642-fbc61d02-ed8a-48bb-bb87-16de5e3a65b5.png)
 
 Since our file stores spatial data for each time step (every day of year 2000), we first select a single day. In the code above, `ds.precip[180]` selects the 179th day of the year (remember that python indexing starts with a 0). The argument `origin="lower"` is used for matrix plotting that usually starts at lower corner. 
 
@@ -65,5 +65,16 @@ Since our file stores spatial data for each time step (every day of year 2000), 
 The file we are using have only data for a single year. Most of the times, we will have multiple files for different time periods (say for each year) but for the same spatial extent. Processing each file repeatedly consumes time and is inefficient. `xarray` provides a function for mergin such multiple files together into a continuous spatio-temporal series. 
 
 {% highlight python %}
+files=[os.path.join("full_path_to_folder",f) for f in os.listdir(".\data")]
 
+ds = xr.open_mfdataset(files,combine = 'by_coords', concat_dim ="time")
+ds
 {% endhighlight %}
+
+![ds_merge](https://user-images.githubusercontent.com/109160548/179163212-9a65cc3d-b1d4-4b76-ad13-c91341bbf585.png)
+
+
+We store the full path of all the .nc files that we want to merge in the `files` variable. Next, merge all the files by co-ordinates (`combine` argument). Notice that the number of longitute and latitude are same as the previous dataset but the time variable has increased covering years 2000-2015. Also note that the data variable `precip` is now a `dask.array` instead of a `data.array`.
+
+
+
