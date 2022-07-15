@@ -65,6 +65,5 @@ Since our file stores spatial data for each time step (every day of year 2000), 
 The file we are using have only data for a single year. Most of the times, we will have multiple files for different time periods (say for each year) but for the same spatial extent. Processing each file repeatedly consumes time and is inefficient. `xarray` provides a function for mergin such multiple files together into a continuous spatio-temporal series. 
 
 {% highlight python %}
-pr_plot = plt.imshow(ds.precip[180],origin="lower")
-plt.colorbar(pr_plot)
+
 {% endhighlight %}
