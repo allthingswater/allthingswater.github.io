@@ -76,5 +76,35 @@ ds
 
 We store the full path of all the .nc files that we want to merge in the `files` variable. Next, merge all the files by co-ordinates (`combine` argument). Notice that the number of longitute and latitude are same as the previous dataset but the time variable has increased covering years 2000-2015. Also note that the data variable `precip` is now a `dask.array` instead of a `data.array`.
 
+# Clip using spatial extent and time
+We can clip the file to contain only a specific area or spanning only a subset of time using the `sel` and `slice` functions. Make sure that the you are using the name of the coordinates (instead of lat,lon and time) for your own `.nc` file.
+{% highlight python %}
+start_date = "2005-01-01"
+end_date = "2008-12-31"
+clip_ds=ds.sel(lon=slice(79,90),lat=slice(25,31),time=slice(start_date,end_date))
+{% endhighlight %}
 
+The clipped file can again be saved as a netCDF file.
+{% highlight python %}
+clip_ds.to_netcdf('./data/Clipped.nc')
+{% endhighlight %}
 
+# Extract values for single point
+We can also extract time-series data for a particular point location of interest, maybe at the location of ground-station, and export it as a `csv` file or plot it. 
+{% highlight python %}
+stn_lat=29.3689
+stn_lon=81.2062
+stn_val=ds.precip.sel(lon=stn_lon,lat=stn_lat,method='nearest')
+
+df= stn_val.to_dataframe()
+df.head()
+df.to_csv('.\data\stn_precip.csv')
+{% endhighlight %}
+
+![df](https://user-images.githubusercontent.com/109160548/179166959-bf7a2ee6-4378-4ea1-9648-afeb9f50c1d3.png)
+
+{% highlight python %}
+stn_val.plot()
+{% endhighlight %}
+
+![image](https://user-images.githubusercontent.com/109160548/179167565-6e4cd898-09ab-49ed-b2ec-bd53710e6620.png)
