@@ -14,8 +14,7 @@ categories: media
 
 This blog helps to get started with [xarray](https://docs.xarray.dev/en/stable/) - a powerful tool for reading, writing and manipulating N-dimensional data files and is particularly emphasized on handling `netcdf` files. `xarray` is very much similar to `pandas`, so if you already have a basic grip over `pandas`, it will be a lot more intuitive. 
 
-##Contents
-{:toc}
+
 
 ## LETS CODE! 
 First of all, import all the required packages
