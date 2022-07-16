@@ -4,7 +4,7 @@
   <div class="container">
     <h1> NISCHAL KARKI </h1>
     <h2> Environment Engineer | Ongoing: M.Sc. Water Resources Engineering </h2> 
-    Down to talk about:
+     <h3> Down to talk about: </h3>
     <h3> Computational Hydrology | Climate Change | Remote sensing | R | Python | ...  </h3>
   </div>
 </div>
