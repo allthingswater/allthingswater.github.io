@@ -26,6 +26,12 @@ import pandas as pd
 import os
 {% endhighlight %}
 
+If you don't have xarray installed, use pip or conda installation:
+{% highlight python %}
+pip install xarray
+conda install -c conda-forge xarray dask netCDF4 bottleneck
+{% endhighlight %}
+
 # Load and have a look at the data
 Next, we load the data using the `xr.open_dataset()` function. Here, we are using precipitation data from `APHRODITE`. You can change the directory to your own `.nc` file.
 
